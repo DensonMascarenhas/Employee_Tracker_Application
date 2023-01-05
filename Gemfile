@@ -52,7 +52,7 @@ gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
 
 # webpacker
-gem 'webpacker', '~> 5.4.3'
+# gem 'webpacker', '~> 5.4.3'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
