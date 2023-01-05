@@ -1,0 +1,37 @@
+<h2><%= t "devise.invitations.new.header" %></h2>
+
+<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "employees/shared/error_messages", resource: resource %>
+
+  <% resource.class.invite_key_fields.each do |field| -%>
+    <div class="field">
+      <%= f.label field %><br />
+      <%= f.text_field field %>
+    </div>
+     <div class="field">
+      <%= f.label :name,"Name" %><br />
+      <%= f.text_field :name %>
+    </div>
+     <div class="field">
+      <%= f.label :username,"Username" %><br />
+      <%= f.text_field :username %>
+    </div>
+     <div class="field">
+      <%= f.label :designation,"Designation" %><br />
+      <%= f.text_field :designation %>
+    </div>
+     <div class="field">
+      <%= f.label :master_employee_role_id,"Employee Role Id" %><br />
+      <%= f.text_field :master_employee_role_id %>
+    </div>
+      <div class="field">
+      <%= f.label :division_id,"Employee Division Id" %><br />
+      <%= f.text_field :division_id %>
+    </div>
+
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit t("devise.invitations.new.submit_button") %>
+  </div>
+<% end %>

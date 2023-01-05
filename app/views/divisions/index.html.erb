@@ -1,0 +1,14 @@
+
+<h1>Divisions</h1>
+<div>
+<% @divisions.each do |d|%>
+<div>
+<%=d.name%>
+<%=link_to "Edit",edit_division_path(d.id)%>
+<%=link_to "Show",division_path(d.id)%>
+<%=button_to "Delete",division_path(d.id),method: :delete, data:{turbo_confirm: "Are Your Sure to Delete?"}%>
+</div>
+<%end%>
+</div>
+
+<%=link_to "Add New Division",new_division_path%>
